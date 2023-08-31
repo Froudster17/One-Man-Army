@@ -78,4 +78,14 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint = 0;
         }
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(1);
+        }
+    }
 }
