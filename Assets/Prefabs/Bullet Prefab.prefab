@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7648749713766644187}
   - component: {fileID: 4701399829691434485}
   - component: {fileID: 3439851478715423292}
+  - component: {fileID: -1667473328442978811}
   m_Layer: 0
   m_Name: Bullet Prefab
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ef7fa4a592a7a5243ad45abb23e940ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -158,3 +159,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1081059, y: 0.5065249}
   m_EdgeRadius: 0
+--- !u!114 &-1667473328442978811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818469610782159964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e145ba764f26a584c9e21d273a7bea1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffect: {fileID: 3954354684971064649, guid: 3cf7a2eba834406408df613246a2a67e, type: 3}
