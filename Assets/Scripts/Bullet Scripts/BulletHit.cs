@@ -8,8 +8,18 @@ public class BulletHit : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Inflict damage to the enemy if it has an EnemyHealth component
+        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
+        {
+            enemyHealth.TakeDamage(1);
+        }
+
+        // Instantiate and destroy hit effect
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 0.3f);
-        Destroy(gameObject);  
+
+        // Destroy the bullet
+        Destroy(gameObject);
     }
 }
