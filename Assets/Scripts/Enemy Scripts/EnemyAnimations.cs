@@ -8,9 +8,11 @@ public class EnemyAnimations : MonoBehaviour
     [SerializeField] private Rigidbody2D rigidbody2D;
     [SerializeField] private CircleCollider2D circleCollider2D;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Bullet"))
+
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             Hit();
         }

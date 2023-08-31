@@ -6,7 +6,7 @@ public class BulletHit : MonoBehaviour
 {
     [SerializeField] private GameObject hitEffect;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         // Inflict damage to the enemy if it has an EnemyHealth component
         EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
