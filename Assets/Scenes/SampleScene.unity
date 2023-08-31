@@ -256,6 +256,8 @@ MonoBehaviour:
   bulletForce: 20
   shotDelay: 0.2
   canShoot: 1
+  isRolling: 0
+  lastShotTime: 0
 --- !u!1 &403959237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,7 +1869,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 1.2
-  endReachedDistance: 0.2
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -3277,7 +3279,7 @@ GameObject:
   - component: {fileID: 1411279163}
   - component: {fileID: 1411279164}
   - component: {fileID: 1411279162}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,15 +10,16 @@ public class GunShoot : MonoBehaviour
     [SerializeField] private float bulletForce = 20f;
     [SerializeField] private float shotDelay = 0.2f; // Delay between shots
 
-    [SerializeField] public bool canShoot = true;
+    public bool canShoot = true;
+    public bool isRolling = false;
+    public float lastShotTime;
 
     private void Update()
     {
         if ((Input.GetButtonDown("Fire1") || Input.GetButton("Fire1")) && canShoot)
         {
-            Debug.Log("Gun Fired");
             Shoot();
-            StartCoroutine(ShotDelay());
+            lastShotTime = Time.time;
         }
     }
 
@@ -29,10 +30,19 @@ public class GunShoot : MonoBehaviour
         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
     }
 
-    private IEnumerator ShotDelay()
+    private void LateUpdate()
     {
-        canShoot = false;
-        yield return new WaitForSeconds(shotDelay);
-        canShoot = true;
+
+        if (isRolling == false)
+        {
+            if (Time.time - lastShotTime > shotDelay)
+            {
+                canShoot = true;
+            }
+            else
+            {
+                canShoot = false;
+            }
+        }
     }
 }

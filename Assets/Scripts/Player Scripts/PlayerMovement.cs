@@ -51,8 +51,8 @@ public class PlayerMovement : MonoBehaviour
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashlengh;
                 animator.SetTrigger("Roll");
-                gunShoot.canShoot = false;
-                gunSpriteRender.enabled = !enabled;
+                gunShoot.isRolling = true;
+                gunSpriteRender.enabled = !gunSpriteRender.enabled;
             }
         }
 
@@ -64,8 +64,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 activeMoveSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
-                gunShoot.canShoot = true;
-                gunSpriteRender.enabled = enabled;
+                gunShoot.isRolling = false;
+                gunSpriteRender.enabled = true;
             }
         }
 

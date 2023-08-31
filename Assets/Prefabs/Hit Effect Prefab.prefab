@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3033794539895227916}
   - component: {fileID: 6678643569500512376}
   - component: {fileID: 9135435894460622521}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hit Effect Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
