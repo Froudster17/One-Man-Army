@@ -1791,10 +1791,10 @@ GameObject:
   m_Component:
   - component: {fileID: 480836667}
   - component: {fileID: 480836671}
+  - component: {fileID: 480836674}
   - component: {fileID: 480836670}
-  - component: {fileID: 480836669}
-  - component: {fileID: 480836668}
-  - component: {fileID: 480836672}
+  - component: {fileID: 480836673}
+  - component: {fileID: 480836675}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -1818,62 +1818,6 @@ Transform:
   - {fileID: 1759964843}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &480836668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480836666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  target: {fileID: 1411279160}
---- !u!114 &480836669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480836666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
-  radius: 0.47
-  height: 2
-  canMove: 1
-  maxSpeed: 3
-  gravity: {x: 0, y: 0, z: 0}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  centerOffsetCompatibility: NaN
-  repathRateCompatibility: NaN
-  canSearchCompability: 0
-  orientation: 1
-  enableRotation: 0
-  autoRepath:
-    mode: 2
-    interval: 0.5
-    sensitivity: 10
-    maximumInterval: 2
-    visualizeSensitivity: 0
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
-  rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 1.2
-  endReachedDistance: 1
-  alwaysDrawGizmos: 0
-  slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
-  constrainInsideGraph: 0
 --- !u!114 &480836670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1937,7 +1881,52 @@ CircleCollider2D:
   m_Offset: {x: -0.10366154, y: -0.0544222}
   serializedVersion: 2
   m_Radius: 0.37819785
---- !u!114 &480836672
+--- !u!114 &480836673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480836666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fdef2816c4d2f43a6a35c0e8eb735c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1411279160}
+  speed: 400
+  nextWaypointDistance: 3
+  seeker: {fileID: 480836670}
+  rigidbody2D: {fileID: 480836674}
+  enemyGraphics: {fileID: 1759964843}
+--- !u!50 &480836674
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480836666}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 1.5
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &480836675
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1949,7 +1938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0120d2a5ff69f044199d47dce8fa549a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiPath: {fileID: 480836669}
   hitSprite: {fileID: 21300000, guid: 89c0bd5bb9c61bb45b38332b5f90e9ce, type: 3}
   hitDuration: 0.1
   spriteRenderer: {fileID: 1759964842}

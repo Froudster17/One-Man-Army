@@ -5,7 +5,6 @@ using Pathfinding;
 
 public class EnemyGraphics : MonoBehaviour
 {
-    [SerializeField] private AIPath aiPath;
     [SerializeField] private Sprite hitSprite;
     [SerializeField] private float hitDuration = 1.0f; // Duration to display hit sprite
 
@@ -20,15 +19,6 @@ public class EnemyGraphics : MonoBehaviour
 
     private void Update()
     {
-        if (aiPath.desiredVelocity.x >= 0.01f)
-        {
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-        else if (aiPath.desiredVelocity.x <= -0.01f)
-        {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-
         if (isHit)
         {
             StartCoroutine(DisplayHitSprite());

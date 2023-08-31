@@ -10,7 +10,6 @@ public class BulletHit : MonoBehaviour
     {
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 0.3f);
-        Destroy(gameObject);
-            
+        Destroy(gameObject);  
     }
 }
