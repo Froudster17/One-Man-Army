@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &34424971
 Transform:
   m_ObjectHideFlags: 0
@@ -3124,7 +3124,11 @@ MonoBehaviour:
   rigidbody2D: {fileID: 1411279163}
   animator: {fileID: 1411279161}
   moveSpeed: 5
+  activeMoveSpeed: 0
   dashSpeed: 10
+  gun: {fileID: 34424970}
+  dashCounter: 0
+  dashCoolCounter: 0
   dashlengh: 0.5
   dashCooldown: 1
 --- !u!50 &1411279163

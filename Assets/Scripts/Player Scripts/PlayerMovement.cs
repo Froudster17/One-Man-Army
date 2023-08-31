@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,12 +9,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rigidbody2D;
     [SerializeField] private Animator animator;
     [SerializeField] private int moveSpeed;
-    private float activeMoveSpeed;
-    public float dashSpeed;
+    [SerializeField] private float activeMoveSpeed;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private GameObject gun;
 
-    private float dashCounter;
-    private float dashCoolCounter;
-    public float dashlengh = .5f, dashCooldown = 1f;
+    [SerializeField] private float dashCounter;
+    [SerializeField] private float dashCoolCounter;
+    [SerializeField] private float dashlengh = .5f, dashCooldown = 1f;
 
     private void Start()
     {
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashlengh;
                 animator.SetTrigger("Roll");
+                gun.SetActive(false);
             }
         }
 
@@ -58,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 activeMoveSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
+                gun.SetActive(true);
             }
         }
 
