@@ -15,8 +15,8 @@ TagManager:
   - Obstacle
   - Player
   - Bullet
-  - 
-  - 
+  - Enemy
+  - Spit
   - 
   - 
   - 
