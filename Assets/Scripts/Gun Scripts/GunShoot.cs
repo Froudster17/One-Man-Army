@@ -13,13 +13,14 @@ public class GunShoot : MonoBehaviour
     public bool canShoot = true;
     public bool isRolling = false;
     public float lastShotTime;
+    private bool bulletSpawning = false;
 
     private void Update()
     {
         if ((Input.GetButtonDown("Fire1") || Input.GetButton("Fire1")) && canShoot)
         {
-            Shoot();
             lastShotTime = Time.time;
+            Shoot();
         }
     }
 
@@ -32,17 +33,18 @@ public class GunShoot : MonoBehaviour
 
     private void LateUpdate()
     {
-
-        if (isRolling == false)
+        if (isRolling == true)
         {
-            if (Time.time - lastShotTime > shotDelay)
-            {
-                canShoot = true;
-            }
-            else
-            {
-                canShoot = false;
-            }
+            canShoot = false;
+        }
+
+        if (Time.time - lastShotTime > shotDelay)
+        {
+            canShoot = true;
+        }
+        else
+        {
+            canShoot = false;
         }
     }
 }
