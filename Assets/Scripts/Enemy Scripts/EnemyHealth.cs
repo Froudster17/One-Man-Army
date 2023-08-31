@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
+        FindObjectOfType<AudioManager>().Play("Slime Hit");
         if (health <= 0)
         {
             StartCoroutine(enemyAnimations.Death());

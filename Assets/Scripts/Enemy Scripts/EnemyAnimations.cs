@@ -25,6 +25,7 @@ public class EnemyAnimations : MonoBehaviour
 
     public IEnumerator Death()
     {
+        FindObjectOfType<AudioManager>().Play("Slime Death");
         animator.SetTrigger("Death");
         circleCollider2D.enabled = !enabled;
         rigidbody2D.bodyType = RigidbodyType2D.Static;

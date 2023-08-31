@@ -4248,6 +4248,16 @@ MonoBehaviour:
   sounds:
   - name: Fire
     clip: {fileID: 8300000, guid: a5182e1f282e176448992377d5d469ef, type: 3}
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+  - name: Slime Hit
+    clip: {fileID: 8300000, guid: 5cddfc8bc065ec24a9ea3cb2b3dbade0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Slime Death
+    clip: {fileID: 8300000, guid: 0157621bf7dad3448a99e5a17ba88d35, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
