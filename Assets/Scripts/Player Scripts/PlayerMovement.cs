@@ -11,11 +11,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int moveSpeed;
     [SerializeField] private float activeMoveSpeed;
     [SerializeField] private float dashSpeed;
-    [SerializeField] private GameObject gun;
 
     [SerializeField] private float dashCounter;
     [SerializeField] private float dashCoolCounter;
     [SerializeField] private float dashlengh = .5f, dashCooldown = 1f;
+
+    [SerializeField] private GunShoot gunShoot;
+    [SerializeField] private SpriteRenderer gunSpriteRender;
 
     private void Start()
     {
@@ -49,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashlengh;
                 animator.SetTrigger("Roll");
-                gun.SetActive(false);
+                gunShoot.canShoot = false;
+                gunSpriteRender.enabled = !enabled;
             }
         }
 
@@ -61,7 +64,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 activeMoveSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
-                gun.SetActive(true);
+                gunShoot.canShoot = true;
+                gunSpriteRender.enabled = enabled;
             }
         }
 

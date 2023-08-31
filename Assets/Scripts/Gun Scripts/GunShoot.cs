@@ -10,7 +10,7 @@ public class GunShoot : MonoBehaviour
     [SerializeField] private float bulletForce = 20f;
     [SerializeField] private float shotDelay = 0.2f; // Delay between shots
 
-    [SerializeField] private bool canShoot = true;
+    [SerializeField] public bool canShoot = true;
 
     private void Update()
     {
