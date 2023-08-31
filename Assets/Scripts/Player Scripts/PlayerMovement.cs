@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0)
             {
+                FindObjectOfType<AudioManager>().Play("Player Roll");
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashlengh;
                 animator.SetTrigger("Roll");

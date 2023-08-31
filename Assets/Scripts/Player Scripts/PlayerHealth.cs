@@ -18,5 +18,6 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= amount;
         healthBar.value = health;
+        FindObjectOfType<AudioManager>().Play("Player Hit");
     }
 }
