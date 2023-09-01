@@ -619,6 +619,7 @@ MonoBehaviour:
   animator: {fileID: 7384798700250147829}
   rigidbody2D: {fileID: 305895627366544258}
   circleCollider2D: {fileID: 3944167546409613105}
+  pointAmount: 3
 --- !u!114 &384783986432893429
 MonoBehaviour:
   m_ObjectHideFlags: 0
