@@ -14,6 +14,11 @@ public class EnemyRangeAttack : MonoBehaviour
 
     private bool canFire = true;
 
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerMovement>().gameObject.transform;
+    }
+
     private void Update()
     {
         RotateTowardsPlayer();
