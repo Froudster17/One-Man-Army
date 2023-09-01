@@ -65,7 +65,7 @@ public class GunShoot : MonoBehaviour
     {
         Debug.Log("Recharging ammo");
         yield return new WaitForSeconds(1f / ammoRechargeRate);
-        currentAmmo += 1;
+        currentAmmo += Mathf.RoundToInt(currentAmmo * 0.2f) + 1; 
         currentAmmo = Mathf.Clamp(currentAmmo, 0, maxAmmo);
         UpdateAmmoUI();
         reloading = false;
