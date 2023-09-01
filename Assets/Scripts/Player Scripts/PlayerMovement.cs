@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,10 +19,15 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private GunShoot gunShoot;
     [SerializeField] private SpriteRenderer gunSpriteRender;
+    [SerializeField] private Slider dashCooldownSlider;
 
     private void Start()
     {
         activeMoveSpeed = moveSpeed;
+
+        // Initialize the slider values
+        dashCooldownSlider.maxValue = dashCooldown;
+        dashCooldownSlider.value = 0;
     }
 
     private void Update()
@@ -57,6 +63,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        // Update the dash cooldown slider
+        dashCooldownSlider.value = dashCooldown - dashCoolCounter;
+        if (dashCooldownSlider.value == dashCooldownSlider.maxValue)
+        {
+            dashCooldownSlider.value = 0;
+        }
+
         if (dashCounter > 0)
         {
             dashCounter -= Time.deltaTime;
@@ -73,6 +86,12 @@ public class PlayerMovement : MonoBehaviour
         if (dashCoolCounter > 0)
         {
             dashCoolCounter -= Time.deltaTime;
+
+            // Check if the cooldown is completed and hide the slider
+            if (dashCoolCounter <= 0)
+            {
+                dashCooldownSlider.value = 0;
+            }
         }
     }
 }
